@@ -1,3 +1,4 @@
-import bar from './bar';
 
-bar();
+import bar from '@src/bar'
+
+bar()

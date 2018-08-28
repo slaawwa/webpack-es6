@@ -19,12 +19,20 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-es2015": "^7.0.0-beta.53",
     "@babel/register": "^7.0.0",
+    "module-alias": "^2.1.0",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.6"
   },
   "babel": {
-    "presets": ["@babel/env"],
+    "presets": [
+      "@babel/env"
+    ],
     "plugins": []
+  },
+  "_moduleAliases": {
+    "@root"      : ".",
+    "@src"      : "src/",
+    "@cnf"      : "_config/"
   }
 }

@@ -1,5 +1,8 @@
 
-import getWebpackCnf from './_config/webpack.dev.babel'
+import 'module-alias/register'
+
+import getWebpackDevCnf from '@cnf/webpack.dev.babel'
+import getWebpackProdCnf from '@cnf/webpack.prod.babel'
 
 export default env => {
 
@@ -8,11 +11,11 @@ export default env => {
     switch (env.mode) {
         case 'prod':
         case 'production':
-            config = getWebpackCnf({mode: 'production'})
+            config = getWebpackProdCnf({mode: 'production'})
             break
         case 'test':
         case 'testing':
-            config = getWebpackCnf({mode: 'test'})
+            config = getWebpackTestCnf({mode: 'test'})
             break
         case 'load-static':
             config = require('./_config/webpack.load-static.babel')({
@@ -26,7 +29,7 @@ export default env => {
         case 'dev':
         case 'development':
         default:
-            config = getWebpackCnf({mode: 'development'})
+            config = getWebpackDevCnf({mode: 'development'})
     }
 
     return config

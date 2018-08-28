@@ -5,7 +5,7 @@ export default (cnf={}) => {
 
     return Object.assign({}, common(cnf), cnf, {
         optimization: {
-            minimize: false,
+            minimize: true,
         },
     })
 }
